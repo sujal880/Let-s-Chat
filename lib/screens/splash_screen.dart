@@ -19,9 +19,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(milliseconds: 2000),(){
+    Future.delayed(Duration(milliseconds: 4000),(){
       SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
-      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.white,systemNavigationBarColor: Colors.white));
       if(API.auth.currentUser!=null){
         log("${API.auth.currentUser!.uid}");
         Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>HomeScreen()));
@@ -40,7 +40,8 @@ class _SplashScreenState extends State<SplashScreen> {
               top: mq.height*.30,
               width: mq.width*.5,
               right: mq.width*.25,
-              child: Lottie.network("https://assets9.lottiefiles.com/packages/lf20_iilq3soe.json")),
+              child: Image.asset("images/conversation.png")
+          ),
           Positioned(
               bottom: mq.height*.15,
               width: mq.width,

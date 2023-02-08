@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:letschat/models/chatroommodel.dart';
+import 'package:letschat/screens/chat_screen.dart';
 import 'package:lottie/lottie.dart';
 
 import '../main.dart';
@@ -25,6 +26,9 @@ class _ChatUserCardState extends State<ChatUserCard> {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       child: GestureDetector(
         child: ListTile(
+          onTap: (){
+            Navigator.push(context,MaterialPageRoute(builder: (context)=>ChatScreen(user: widget.user)));
+          },
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(mq.height*.3),
             child: CachedNetworkImage( height: mq.height*.055,width: mq.height*.055,

@@ -45,6 +45,7 @@ dependencies:
   cached_network_image: ^3.2.3
   image_picker: ^0.8.6+1
   firebase_storage: ^11.0.10
+  emoji_picker_flutter: ^1.5.2
 
 flutter_icons:
   android: "ic_launcher"
